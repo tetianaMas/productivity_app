@@ -13,10 +13,10 @@ const PARTIAL_TAB = path.resolve(
   __dirname,
   './src/app/components/tab/template'
 );
-const STATIC_FILES = 'src/static/';
-const IMAGES = 'src/assets/images';
+const STATIC_FILES = './src/static/';
+const IMAGES = './src/assets/images';
 const CONTENT_BASE = './dist';
-const ROOT_HTML = 'src/index.html';
+const ROOT_HTML = './src/index.html';
 
 module.exports.paths = {
   entry: ENTRY,
