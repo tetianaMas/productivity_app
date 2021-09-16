@@ -13,7 +13,6 @@ const PARTIAL_TAB = path.resolve(
   __dirname,
   './src/app/components/tab/template'
 );
-const STATIC_FILES = './src/static/';
 const IMAGES = './src/assets/images';
 const CONTENT_BASE = './dist';
 const ROOT_HTML = './src/index.html';
@@ -27,7 +26,6 @@ module.exports.paths = {
   hbs_helpers: HBS_HELPERS,
   partial_header: PARTIAL_HEADER,
   partial_tab: PARTIAL_TAB,
-  static_files: STATIC_FILES,
   images: IMAGES,
   content_base: CONTENT_BASE,
   root_html: ROOT_HTML,

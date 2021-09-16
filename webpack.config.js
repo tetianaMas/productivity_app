@@ -91,10 +91,6 @@ module.exports = {
     new CopyWebpackPlugin([
       paths.root_html,
       {
-        from: paths.static_files,
-        to: 'static',
-      },
-      {
         from: paths.images,
         to: 'images',
       },
