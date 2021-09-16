@@ -1,0 +1,24 @@
+<div class="tabs js-nav">
+  {{#if selectTabs}}
+  <div class="tab tab--left tab--hidden js-tab-select">
+      <button class="tab__btn js-select-daily-list">Select all</button>
+      <button class="tab__btn js-deselect-daily-list">Deselect all</button>
+  </div>
+  {{/if}}
+
+  <div class="tab tab--right {{{additionalClasses}}}">
+    {{#if activeTab}}
+      <button class="tab__btn js-tablink first-main-tab tab__btn--active {{checkActiveState period firstVal}}" {{{firstValAttr}}}>{{firstVal}}</button>
+      {{else}}      
+      <button class="tab__btn js-tablink first-main-tab {{checkActiveState period firstVal}}" {{{firstValAttr}}}>{{firstVal}}</button>
+      {{/if}}
+      {{#if activeTabSecond}}
+      <button class="tab__btn js-tablink second-main-tab tab__btn--active {{checkActiveState period secondVal}}" {{{secondValAttr}}}>{{secondVal}}</button>
+      {{else}}
+      <button class="tab__btn js-tablink second-main-tab {{checkActiveState period secondVal}}" {{{secondValAttr}}}>{{secondVal}}</button>
+      {{/if}}
+      {{#if thirdVal}}
+      <button class="tab__btn js-tablink {{checkActiveState period thirdVal}}" {{{thirdValAttr}}}>{{thirdVal}}</button>
+      {{/if}}
+  </div>
+</div>

@@ -1,0 +1,29 @@
+{{> header}}
+
+<main class="main main--static">
+    <div class="main__task-info">
+      <h1 class="main__task-info__title">{{title}}</h1>
+      <p class="main__task-info__subtitle">{{description}}</p>
+
+      <div class="main__task-info__estimation js-timer-estimation-block">
+        {{{createPomodoros estimation}}}
+        <button class="icon-add d-none js-btn-pomodoros-add"></button>
+      </div>
+    </div>
+
+    <div class="main__timer">
+      <a href="/#/task-list" class="main__timer__link main__timer__link--left icon-arrow-left js-btn-to-task-list" title="Go to Global List">
+      </a>
+      <div id="js-main-timer">
+    </div>
+      <a href="/#/reports/day/tasks" class="main__timer__link main__timer__link--right icon-arrow-right d-none js-btn-to-reports" title="Go to Report">
+    </a>
+    </div>
+    
+    <div class="main__control main__control--timer js-main__control--timer">
+      <button class="main__control__button main__control__button--mint js-start-timer">
+        Start
+      </button>
+    </div>
+  </main>
+  

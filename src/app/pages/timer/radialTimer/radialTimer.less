@@ -1,0 +1,160 @@
+@import (reference) '~@less-helpers-module/_mixins.less';
+@import (reference) '~@less-helpers-module/_variables.less';
+
+.timer {
+  &__block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 256/@rem;
+    min-height: 256/@rem;
+    text-align: center;
+    #fonts>.caption(26/@rem, 32/@rem, 400);
+    color: @white-color;
+    border-radius: 50%;
+    box-shadow: 0px 4/@rem 56/@rem rgba(21, 43, 59, 0.6);
+    overflow: hidden;
+
+    &--work {
+      border: 4/@rem solid @work-category-color;
+    }
+
+    &--education {
+      border: 4/@rem solid @education-category-color;
+    }
+
+    &--hobby {
+      border: 4/@rem solid @hobby-category-color;
+    }
+
+    &--sport {
+      border: 4/@rem solid @sport-category-color;
+    }
+
+    &--other {
+      border: 4/@rem solid @other-category-color;
+    }
+
+    .timer {
+      width: 240/@rem;
+      height: 240/@rem;
+      background-color: transparent;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      overflow: hidden;
+
+      &__left-line,
+      &__right-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          box-sizing: border-box;
+          border: 40/@rem solid @nepal-color;
+          animation-duration: var(--animation-duration);
+          animation-iteration-count: 1;
+          animation-timing-function: linear;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      &__right-line {
+        right: 0;
+        left: auto;
+
+        &::before {
+          border-left: none;
+          border-top-right-radius: 999/@rem;
+          border-bottom-right-radius: 999/@rem;
+          transform-origin: center left;
+          animation-name: right-line-rotate;
+        }
+      }
+
+      &__left-line {
+        &::before {
+          border-right: none;
+          border-top-left-radius: 999/@rem;
+          border-bottom-left-radius: 999/@rem;
+          transform-origin: center right;
+          animation-name: left-line-rotate;
+        }
+      }
+
+      &__content {
+        width: 160/@rem;
+        height: 160/@rem;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: @background-color;
+        border-radius: 50%;
+        z-index: 4;
+        overflow: hidden;
+      }
+
+      &__break {
+        margin-bottom: 8/@rem;
+        #fonts>.paragraph(16/@rem, 16/@rem, 400, uppercase);
+        letter-spacing: 0.8/@rem;
+
+        &--over {
+          #fonts>.caption(26/@rem, 32/@rem, 400);
+          max-width: 70%;
+        }
+      }
+
+      &__time {
+        #fonts>.paragraph(100/@rem, 78/@rem, 400);
+        margin-bottom: 8/@rem;
+      }
+
+      &__dimension {
+        #fonts>.paragraph(24/@rem, 24/@rem, 400);
+        letter-spacing: 1.2/@rem;
+      }
+    }
+  }
+}
+
+@keyframes left-line-rotate {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  50% {
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes right-line-rotate {
+  0% {
+    transform: rotate(-180deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}

@@ -1,0 +1,26 @@
+{{#each values}}
+<div class="settings__item settings__item--{{getCategoryColor @key}}">
+  <div class="settings__info">
+    <span>
+      {{createBtnTitle @key}}
+    </span>
+    <div class="settings__controls" id="{{@key}}">
+      <button
+        class="settings__controls__btn icon-minus js-btn js-btn-minus"
+      ></button>
+      <span class="settings__controls__value js-btn-value">
+        {{this.value}}
+      </span>
+      <button
+        class="settings__controls__btn icon-add js-btn js-btn-add"
+      ></button>
+    </div>
+  </div>
+  <p class="settings__item__caption">
+    Please select a value between {{this.min}} and {{this.max}}
+    <span class="settings__item__caption--white">
+      {{getCurrentDimension @key}}
+    </span>
+  </p>
+</div>
+{{/each}}

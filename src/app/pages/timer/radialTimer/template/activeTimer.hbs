@@ -1,0 +1,9 @@
+{{#if showFull}}
+<div class="timer">
+{{else}}
+<div class="timer" style="--animation-duration: {{time}}s;">
+{{/if}}
+    <div class="timer__left-line"></div>
+    <div class="timer__right-line"></div>
+    <div class="timer__content">{{{content}}}</div>
+</div>  

@@ -1,0 +1,15 @@
+export const newTaskOptions = {
+  categoryId: 'other',
+  completeDate: null,
+  completedCount: [],
+  createDate: { fullDeadline: 1617482733224, month: 'April', day: 3 },
+  deadline: 'April 5, 2021',
+  deadlineDate: { fullDeadline: 1617570000000, month: 'April', day: 5 },
+  description: 'Hello! Let`s start cleaning!',
+  estimation: '5',
+  failedPomodoros: [],
+  id: '61500269640882320691',
+  priority: 'middle',
+  status: 'GLOBAL_LIST',
+  title: 'Test',
+};

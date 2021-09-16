@@ -1,0 +1,24 @@
+{{> header }}
+<main class="main">
+  {{> tab tab }}
+  <section class="main__content main__content--pomodoros" aria-label="Pomodoros List">
+        <h2 class="main__content__title">Pomodoros settings</h2>
+
+        <div class="settings js-settings"></div>
+
+        <div class="cycle">
+          <h2 class="cycle__title">Your cycle</h2>
+          <section class="cycle__scale js-cycle" aria-label="Dinamic cycle represents time settings for pomodoros">
+          </section>
+          <div class="cycle__control">
+            <button class="cycle__button cycle__button--blue js-btn-to-tasks">
+              Go to Tasks
+            </button>
+            <button class="cycle__button cycle__button--mint js-btn-save">
+              Save
+            </button>
+          </div>
+        </div>
+    </section>
+</main>
+

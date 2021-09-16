@@ -1,0 +1,50 @@
+{
+  "name": "pomodoro-app",
+  "description": "RD-LAB Productivity Application",
+  "author": "Iurii Klymiuk",
+  "contributors": [
+    "Andrii Dieiev"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --config=webpack.config.dev.js --open",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.12.15",
+    "@babel/preset-env": "^7.12.13",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "eslint": "^7.23.0",
+    "eslint-loader": "^4.0.2",
+    "file-loader": "^1.1.11",
+    "handlebars": "^4.7.6",
+    "handlebars-jest": "^0.5.0",
+    "handlebars-loader": "^1.7.1",
+    "jest": "^26.6.3",
+    "jest-css-modules": "^2.1.0",
+    "jsdoc": "^3.6.6",
+    "less": "^3.8.0",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.13",
+    "core-js": "^3.9.0",
+    "firebase": "^8.2.6",
+    "highcharts": "^9.0.1",
+    "jquery": "^3.6.0",
+    "nanoid": "^3.1.20",
+    "popper.js": "^1.16.1",
+    "webpack-jquery-ui": "^2.0.1"
+  },
+  "browserslist": "> 0.25%, not dead"
+}

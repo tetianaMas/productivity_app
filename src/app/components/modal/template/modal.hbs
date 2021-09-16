@@ -1,0 +1,116 @@
+<section id="js-modal-window" aria-labelledby="modal dialog" aria-modal="true">
+    <div class="overlay"></div>
+    <div class="modal">
+      <div class="modal__control">
+        <button class="modal__control__button js-modal-save-btn" >
+          <span class="icon-check "></span>
+        </button>
+  
+        <button class="modal__control__button js-modal-close-btn">
+          <span class="icon-close "></span>
+        </button>
+      </div>
+
+      <form class="modal__form js-modal-form">
+      
+      {{#if id}}
+      <h1 class="modal__title">edit task</h1>
+      {{else}}
+      <h1 class="modal__title">add task</h1>
+       {{/if}}
+  
+      
+        <div class="form__item">
+          <label for="title" class="form__item__title">title</label>
+          <input type="text" id="title" name="title" placeholder="Add title here" value="{{title}}" class="form__item__input" required>
+        </div>
+        <div class="form__item">
+          <label for="description" class="form__item__title">description</label>
+          <input type="text" id="description" name="description" placeholder="Add description here" value="{{description}}" class="form__item__input" required>
+        </div>
+        <div class="form__item">
+          <h2 class="form__item__title">category</h2>
+  
+          <div class="form__item__input">
+            <div class="form__item__unit">
+              <input type="radio" value="work" id="work" name="category" {{isChecked categoryId 'work'}} {{#unless categoryId}} checked{{/unless}}>
+              <label for="work" class="form__item__radio form__item__radio--work">work</label>
+            </div>
+
+            <div class="form__item__unit">
+              <input type="radio" value="education" id="education" name="category" {{isChecked categoryId 'education'}}>
+              <label for="education" class="form__item__radio form__item__radio--education">education</label>
+            </div>
+  
+            <div class="form__item__unit">
+              <input type="radio" value="hobby" id="hobby" name="category" {{isChecked categoryId 'hobby'}}>
+              <label for="hobby" class="form__item__radio form__item__radio--hobby">hobby</label>
+            </div>
+  
+            <div class="form__item__unit">
+              <input type="radio" value="sport" id="sport" name="category" {{isChecked categoryId 'sport'}}>
+              <label for="sport" class="form__item__radio form__item__radio--sport">sport</label>
+            </div>
+  
+            <div class="form__item__unit">
+              <input type="radio" value="other" id="other" name="category" {{isChecked categoryId 'other'}}>
+              <label for="other" class="form__item__radio form__item__radio--other">other</label>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form__item">
+          <label for="deadline" class="form__item__title">deadline</label>
+          {{#if deadline}} 
+          <input type="text" id="deadline" name="deadline" value="{{deadline}}"  class="form__item__input form__item__input--deadline" readonly required>
+            {{else}}
+          <input type="text" id="deadline" name="deadline" placeholder="{{renderDateTask}}"  class="form__item__input form__item__input--deadline" readonly required>
+          {{/if}}
+        </div>
+        <div class="form__item">
+          <h2 class="form__item__title">estimation</h2>
+  
+          <div class="form__item__input form__item__input--reverse">
+            <input type="radio" id="tomato-5" name="rating" value="5" {{isChecked estimation '5'}}>
+            <label for="tomato-5" class="form__item--range"></label>
+            <input type="radio" id="tomato-4" name="rating" value="4" {{isChecked estimation '4'}}>
+            <label for="tomato-4" class="form__item--range"></label>
+            <input type="radio" id="tomato-3" name="rating" value="3" {{isChecked estimation '3'}} {{#unless estimation}} checked{{/unless}}>
+            <label for="tomato-3" class="form__item--range"></label>
+            <input type="radio" id="tomato-2" name="rating" value="2" {{isChecked estimation '2'}}>
+            <label for="tomato-2" class="form__item--range"></label>
+            <input type="radio" id="tomato-1" name="rating" value="1" {{isChecked estimation '1'}}>
+            <label for="tomato-1" class="form__item--range"></label>
+          </div>
+        </div>
+  
+        <div class="form__item">
+          <h2 class="form__item__title">priority</h2>
+  
+          <div class="form__item__input">
+  
+            <div class="form__item__unit">
+              <input type="radio" value="urgent" id="urgent" name="priority" {{isChecked priority 'urgent'}} {{#unless priority}} checked{{/unless}}>
+              <label for="urgent" class="form__item__radio form__item__radio--urgent">urgent</label>
+            </div>
+  
+            <div class="form__item__unit">
+              <input type="radio" value="high" id="high" name="priority" {{isChecked priority 'high'}}>
+              <label for="high" class="form__item__radio form__item__radio--high">high</label>
+            </div>
+  
+            <div class="form__item__unit">
+              <input type="radio" value="middle" id="middle" name="priority" {{isChecked priority 'middle'}}>
+              <label for="middle" class="form__item__radio form__item__radio--middle">middle</label>
+            </div>
+  
+            <div class="form__item__unit">
+              <input type="radio" value="low" id="low" name="priority" {{isChecked priority 'low'}}>
+              <label for="low" class="form__item__radio form__item__radio--low">low</label>
+            </div>
+          </div>
+        </div>
+      </form>
+  
+    </div>
+  </section>

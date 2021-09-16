@@ -1,0 +1,99 @@
+@import (reference) '~@less-helpers-module/_mixins.less';
+@import (reference) '~@less-helpers-module/_variables.less';
+
+.main {
+  padding-bottom: 48/@rem;
+
+  &__task-info {
+    &__title {
+      margin-top: 86/@rem;
+      #fonts>.heading1-mobile(32/@rem, 36/@rem);
+      letter-spacing: 0.7/@rem;
+      color: @white-color;
+      text-align: center;
+    }
+
+    &__subtitle {
+      margin-top: 20/@rem;
+      #fonts>.paragraph(20/@rem, 24/@rem);
+      letter-spacing: 0.45/@rem;
+      color: @white-color;
+      text-align: center;
+    }
+
+    &__estimation {
+      margin-top: 32/@rem;
+      .flex-center();
+
+      .icon-add {
+        .btn-link();
+        color: @nepal-color;
+        line-height: 12/@rem;
+
+        &::before {
+          font-size: 12/@rem;
+        }
+      }
+    }
+
+    &__icon {
+      width: 24/@rem;
+      height: 24/@rem;
+      margin-right: 16/@rem;
+      background: url('~@assets-root-path/images/empty-tomato.svg');
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &--done {
+        background: url('~@assets-root-path/images/fill-tomato.svg');
+      }
+
+      &--failed {
+        background: url('~@assets-root-path/images/tomato-failed.svg');
+      }
+    }
+  }
+
+  &__timer {
+    margin-top: 88/@rem;
+    .flex-center();
+
+    &__link {
+      .btn-link();
+      .navigation-arrow();
+    }
+  }
+
+  &--static {
+    position: static;
+
+    .main__control {
+      display: flex;
+      justify-content: center;
+
+      &--timer {
+        margin-top: 260/@rem;
+      }
+
+      &__button {
+        .btn();
+        text-transform: capitalize;
+
+        &--small {
+          width: 348/@rem;
+          margin-right: 24/@vw;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+
+.timer-tablet();
+.timer-desktop();

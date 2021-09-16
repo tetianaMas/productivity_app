@@ -1,0 +1,65 @@
+<header class="header js-header-main">
+  <h1 class="header__title">
+    {{pageTitle}}
+    {{#if button}}
+      <button class="header__title__button icon-add js-header-btn"></button>
+    {{/if}}
+  </h1>
+  <div class="header__logo d-none">
+    <a href="#">
+      <img src="./images/Logo.svg" alt="Logo" />
+    </a>
+  </div>
+  <nav class="navigation" aria-label="Main navigation">
+    <ul class="navigation__list">
+      {{#if buttonAddTask}}
+        <li class="navigation__item">
+          <button
+            class="navigation__btn navigation__btn js-btn-add"
+            title="Add Task"
+          >
+            <span class="icon-add d-none"></span>
+          </button>
+        </li>
+      {{/if}}
+      {{#if deleteBtn}}
+        <li class="navigation__item">
+          <button
+            class="navigation__btn js-delete-btn js-btn-delete"
+            title="Delete Task"
+          >
+            <span class="navigation__btn icon-trash"></span>
+            <span class="counter counter--hidden js-counter"></span>
+          </button>
+        </li>
+      {{/if}}
+      <li class="navigation__item">
+        <button
+          class="navigation__btn js-header-nav-btn"
+          data-link="task-list"
+          title="Go to Tasks"
+        >
+          <span class="icon-list {{checkActiveState "task-list"}}"></span>
+        </button>
+      </li>
+      <li class="navigation__item">
+        <button
+          class="navigation__btn js-header-nav-btn"
+          data-link="reports/day/tasks"
+          title="Go to Reports"
+        >
+          <span class="icon-statistics {{checkActiveState "reports"}}"></span>
+        </button>
+      </li>
+      <li class="navigation__item">
+        <button
+          class="navigation__btn js-header-nav-btn"
+          data-link="settings/pomodoros"
+          title="Go to Settings"
+        >
+          <span class="icon-settings {{checkActiveState "settings"}}"></span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>

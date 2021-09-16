@@ -1,0 +1,297 @@
+@import (reference) '~@less-helpers-module/_mixins.less';
+@import (reference) '~@less-helpers-module/_variables.less';
+
+.main {
+  padding: 0 24/@rem 48/@rem;
+
+  &__content {
+    margin-top: 44/@rem;
+
+    &__title {
+      #fonts>.message-mobile(28/@rem, 32/@rem);
+      letter-spacing: 0.55/@rem;
+      color: @nepal-color;
+      text-align: center;
+    }
+
+    .settings,
+    .list {
+      margin: 64/@rem 0 0 36/@rem;
+      padding: 0 102/@vw;
+      #fonts>.paragraph(22/@rem, 24/@rem);
+      text-transform: capitalize;
+      color: @nepal-color;
+
+      &__item {
+        position: relative;
+        margin-top: 40/@rem;
+        border-bottom: 1/@rem solid lighten(@background-color, 13.42%);
+        padding-bottom: 12/@rem;
+        .list-mark();
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &::before {
+          bottom: 16/@rem;
+          left: -36/@rem;
+        }
+
+        &--work {
+          &::before {
+            background: @work-category-color;
+          }
+        }
+
+        &--education {
+          &::before {
+            background: @education-category-color;
+          }
+        }
+
+        &--hobby {
+          &::before {
+            background: @hobby-category-color;
+          }
+        }
+
+        &--sport {
+          &::before {
+            background: @sport-category-color;
+          }
+        }
+
+        &--other {
+          &::before {
+            background: @other-category-color;
+          }
+        }
+      }
+    }
+
+    .settings {
+      margin-bottom: 72/@rem;
+    }
+
+    &--pomodoros {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .settings {
+        &__item {
+          margin: 48/@rem 0 0;
+          max-width: 337/@rem;
+          padding: 0;
+          #fonts>.caption(16/@rem, 16/@rem, 400, uppercase);
+          color: @white-color;
+          border: none;
+          margin-bottom: 64/@rem;
+
+          &::before {
+            top: 0;
+          }
+
+          &__caption {
+            margin-top: 12/@rem;
+            #fonts>.caption(16/@rem, 16/@rem, 400);
+            color: @nepal-color;
+            white-space: nowrap;
+
+            &--white {
+              color: @white-color;
+            }
+          }
+        }
+
+        &__info {
+          display: flex;
+          justify-content: space-between;
+          width: 296/@rem;
+        }
+
+        &__controls {
+          padding-bottom: 8/@rem;
+          display: flex;
+          justify-content: space-between;
+          width: 160/@rem;
+          color: @nepal-color;
+          border-bottom: 1/@rem solid @nepal-color;
+
+          &:hover {
+            border-bottom: 1/@rem solid @menu-active;
+          }
+
+          &__value {
+            #fonts>.paragraph(16/@rem, 16/@rem);
+          }
+
+          &__btn {
+            .btn-link();
+            font-size: 10/@rem;
+            background: transparent;
+          }
+        }
+      }
+
+      .cycle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__title {
+          margin-bottom: 24/@rem;
+          #fonts>.caption(26/@rem, 32/@rem);
+          color: @white-color;
+          text-align: center;
+        }
+
+        &__scale, 
+        .js-cycle {
+          display: flex;
+          flex-direction: column;
+          width: 720/@vw;
+          margin-bottom: 72/@rem;
+        }
+
+        .scale__stage {
+          display: flex;
+          align-items: center;
+        }
+
+        .scale__line {
+          display: flex;
+          max-height: 10/@rem;
+          width: 720/@vw;
+
+          .line {
+            height: 10/@rem;
+
+            &--work {
+              flex-grow: 25;
+              background: @work-category-color;
+            }
+
+            &--short-break {
+              flex-grow: 5;
+              background: #57A6DC;
+            }
+
+            &--long-break {
+              flex-grow: 30;
+              background: @hobby-category-color;
+            }
+          }
+        }
+
+        .scale__caption {
+          display: flex;
+          position: relative;
+          #fonts>.caption(12/@rem, 15.36/@rem, 400);
+          color: @nepal-color;
+
+          &--top {
+            margin-bottom: 12/@rem;
+          }
+
+          .scale__caption__item {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            white-space: nowrap;
+            width: 0;
+
+            &::before {
+              content: '';
+              background: @other-category-color;
+              width: 4/@rem;
+              height: 4/@rem;
+              position: absolute;
+              bottom: -5/@rem;
+              right: 0;
+              transform: translateX(50%);
+              border-radius: 50%;
+            }
+
+            &--end {
+              margin-left: auto;
+            }
+
+            &--hidden {
+              visibility: hidden;
+            }
+            &--value,
+            &--value-border,
+            &--first-cycle-value {
+              position: absolute;
+              right: -10/@rem;
+            }
+
+            &--value-border,
+            &--first-cycle-value {
+              top: -16/@rem;
+            }
+
+            &--first-cycle-value {
+              right: -44/@rem;
+            }
+          }
+
+          .d-none {
+            display: none;
+          }
+
+          &--bottom {
+            width: 720/@vw;
+
+            .scale__caption__item {
+              line-height: 48/@rem;
+
+              &::before {
+                content: '';
+                top: 8/@rem;
+              }
+            }
+          }
+        }
+
+        &__control {
+          display: flex;
+        }
+
+        &__button {
+          .btn();
+          width: 348/@vw;
+          max-width: 100%;
+          height: 72/@rem;
+          #fonts>.caption(24/@rem, 24/@rem);
+          padding: 0;
+
+          &--blue {
+            margin-right: 24/@vw;
+          }
+        }
+      }
+    }
+  }
+
+  &__control {
+    margin-top: 295/@vh;
+    max-width: 100%;
+
+    &__button {
+      .btn();
+      max-width: 100%;
+      width: 720/@vw;
+      height: 72/@rem;
+      padding: 0;
+      #fonts>.caption(24/@rem, 24/@rem);
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+}
+
+.settings-tablet();
+.settings-desktop();

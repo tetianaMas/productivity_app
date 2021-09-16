@@ -1,0 +1,46 @@
+{{> header data}}
+
+<main class="main">
+  {{> tab data.tab}} 
+    <div class="main__content--daily main__content--active js-main__content--daily js-container-daily js-tabcontent" aria-label="Daily tasks List"></div>
+    <div class="main__content--done js-main__content--done d-none js-tabcontent" aria-label="Done tasks List"></div>
+
+    <ol class="global-list d-none js-global-list">
+      <li class="global-list__nav js-nav">
+        <div>
+          <button class="global-list__title js-global-list-btn-toggler" title="Go to Global List">
+            Global list
+            <span class="global-list__icon icon-global-list-arrow-right js-global-list-open-close-icon"></span>
+          </button>
+
+          <div class="tabs js-global-tabs" aria-label="Tasks select navigation">
+            <div class="tab tab--left tab--hidden js-tab-select">
+              <button class="tab__btn js-select-global-list">Select all</button>
+              <button class="tab__btn js-deselect-global-list">Deselect all</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabs tabs--filter js-global-tabs js-global-tabs-categories" aria-label="Tasks priority navigation">
+          <div class="tab">
+            <button class="tab__btn js-tab-btn tab__btn--active">all</button>
+            <button class="tab__btn js-tab-btn">urgent</button>
+            <button class="tab__btn js-tab-btn">high</button>
+            <button class="tab__btn js-tab-btn">middle</button>
+            <button class="tab__btn js-tab-btn">low</button>
+          </div>
+        </div>
+      </li>
+
+      <li class="js-global-list-container">
+        <div>
+          <div class="global-list__content js-global-list-content js-container js-container-global js-tabcontent">
+          </div>
+
+          <div class="global-list__content js-global-list-content--done js-container js-container-global d-none js-tabcontent">
+          </div>
+        </div>
+      </li>
+      
+    </ol>
+  </main>

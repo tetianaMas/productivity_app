@@ -1,0 +1,60 @@
+@import (reference) '~@less-helpers-module/_mixins.less';
+@import (reference) '~@less-helpers-module/_variables.less';
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 55/@rem;
+
+  .tab {
+    display: flex;
+    align-items: baseline;
+    height: 0;
+    margin-bottom: 16/@rem;
+
+    &__btn {
+      position: relative;
+      #fonts>.caption(2.9vw, 24/@rem, 400, capitalize);
+      color: @nepal-color;
+      margin-right: 36/@rem;
+      .btn-link();
+      .cancel-user-selection();
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 1/@rem;
+        height: 16/@rem;
+        background-color: @nepal-color;
+        right: -20/@rem;
+        bottom: 3.2/@rem;
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        &::after {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+
+    &--hidden {
+      display: none;
+    }
+    
+    &--right {
+      margin-left: auto;
+    }
+    &--left {
+      justify-content: flex-start;
+    }
+
+    &--center {
+      margin: 0 auto;
+    }
+  }
+}
+
+.tabs-tablet-desktop();

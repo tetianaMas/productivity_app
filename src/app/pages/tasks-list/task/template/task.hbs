@@ -1,0 +1,62 @@
+  {{#if completeDate}}
+  <div class="task js-task task--done" id="{{id}}">
+    {{else}}
+    <div class="task js-task" id="{{id}}">
+  {{/if}}
+    <div class="task__category task__category--{{categoryId}} js-task__category">
+    </div>
+    {{#if completeDate}}
+    <div class="task__deadline task__deadline--date">
+      {{else}}
+    <div class="task__deadline task__deadline--date {{checkOverdue deadlineDate.fullDeadline}}">
+    {{/if}}
+      {{#if deadlineDate.day}}
+      <span class="task__deadline--date--numeric">{{deadlineDate.day}}</span>
+      {{/if}}
+      {{#if completeDate}}
+      <span class="task__deadline--date--numeric">{{getDate completeDate 'day'}}</span>
+      <span class="task__deadline__title">{{getDate completeDate 'month'}}</span>
+      {{else}}
+      <span class="task__deadline__title">{{deadlineDate.month}}</span>
+      {{/if}}
+    </div>
+
+    <div class="task__info">
+      <div>
+        {{#if completeDate}}
+        <h2 class="task__title task__title--{{priority}} task__title--done">{{title}}</h2>
+        {{else}}
+        <h2 class="task__title task__title--{{priority}}">{{title}}</h2>
+        {{/if}}
+      </div>
+      <div class="task__text">
+        <p>{{description}}</p>
+      </div>
+    </div>
+
+    <div class="task__controls js-btn-controls">
+      {{#if completeDate}}
+      
+      {{else}}
+      <button class="task__controls__btn {{checkButtonHidden status}} icon-arrows-up task__controls__btn--panel js-task-btn-up" title="Drag to Active">
+      </button>
+
+      <button class="task__controls__btn icon-edit task__controls__btn--panel js-task-btn-edit" title="Edit Task">
+      </button>
+
+      <button class="task__controls__btn icon-trash task__controls__btn--panel js-task-btn-delete" title="Delete Task">
+      </button>
+      {{/if}}
+    </div>
+
+    {{#if completeDate}}
+    <div class="task__estimation task__estimation--{{priority}} js-link-start-task task__estimation--done">
+      {{else}}
+      <div class="task__estimation task__estimation--{{priority}} js-link-start-task">
+    {{/if}}
+      <button class="task__estimation__link icon-tomato icon-timer" title="Go to Timer">
+        <span class="task__estimation__number">{{estimation}}</span>
+      </button>
+    </div>
+  </div>
+ 
